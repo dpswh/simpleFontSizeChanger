@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/8fa2bccd91.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    body {
+        font-family: FS Albert Pro;
+        overflow: hidden;
+    }
+
+    button {
+        height: 2rem;
+        width: fit-content;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .button-container-decrease,
+    .button-container-increase {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-container {
+        background-color: #e0e0e0;
+        padding: 1rem;
+        display: grid;
+        grid-template:
+        "increase decrease" auto
+        / 1fr 1fr; 
+        gap: 1rem;
+        margin-top: 10rem;
+    }
+
+    .button-container-decrease {
+        grid-area: decrease;
+    }
+
+    .button-container-increase {
+        grid-area: increase;
+    }
+
+    .affectElem {
+        display: flex;
+        position: absolute;
+        width: 100%;
+        justify-content: center;
+        top: 10rem;
+    }
+
+    .limitMessage {
+        position: absolute;
+        width: 100%;
+        margin: 0 auto 0 auto;
+        color: rgb(228, 36, 36);
+        top: 4rem;
+        text-align: center;
+    }
+
+</style>
+
+<body>
+    <h1 class="limitMessage"></h1>
+    <h1 class="affectElem">Hello.</h1>
+    <div class="container">
+        <div class="button-container">
+            <div class="button-container-decrease">
+                <h3>Increase</h3>
+                <button id="increaseFontSize"><i class="fa-solid fa-chevron-right fa-xl"></i></button>
+            </div>
+            <div class="button-container-increase">
+                <h3>Decrease</h3>
+                <button id="decreaseFontSize"<i class="fa-solid fa-chevron-left fa-xl"></i></button>
+            </div>
+        </div>
+        <h1 class="pixelTracker">px</h1>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
